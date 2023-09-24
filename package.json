@@ -9,9 +9,10 @@
     "jimp": "^0.16.0",
     "lorem-ipsum": "^2.0.3",
     "ts-jest": "^26.2.0",
-    "typescript": "^4.0.2"
+    "typescript": "^3.9.10"
   },
   "devDependencies": {
+    "@types/node": "^20.6.4",
     "prettier": "^2.0.5",
     "ts-node": "^9.0.0"
   },
@@ -24,5 +25,7 @@
     "transform": {
       "\\.ts$": "ts-jest"
     }
-  }
+  },
+  "description": "## Начало работы",
+  "keywords": []
 }

@@ -1,4 +1,4 @@
-import assert from 'assert'
+import assert from "assert"
 import {deflate} from 'zlib'
 
 export function typescriptIntro() {
@@ -22,7 +22,7 @@ export function typescriptIntro() {
   console.log('Hello world!')
 
   // Комментарии в JavaScript и TypeScript имеют стандартный C-подобный синтаксис.
-  // Двойной обратный слэш "//" создаёт комментарий до конца строки, многострочный
+  // Двойной слэш "//" создаёт комментарий до конца строки, многострочный
   // комментарий создаётся при помощи "/*" и "*/":
 
   /* 
