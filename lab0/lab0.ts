@@ -1,6 +1,6 @@
 import assert from "assert"
 import {deflate} from 'zlib'
-
+///////////////////////////////////201////////////////////////////////////////
 export function typescriptIntro() {
   // Знакомство с node.js и языком TypeScript
 
@@ -36,7 +36,7 @@ export function typescriptIntro() {
   // Как только будете готовы продолжить знакомство со средой и языком, удалите или
   // закомментируйте эту строчку.
 
-  /*>>*/ throw new Error('Закомментируйте эту строчку, чтобы продолжить')
+  // throw new Error('Закомментируйте эту строчку, чтобы продолжить')
 
   // JavaScript - язык с динамической типизацией. Это означает, что типы данных
   // могут быть изменены в процессе выполнения, и их нельзя явно указать. С одной стороны,
@@ -142,9 +142,9 @@ export function typescriptIntro() {
   // при попытке что-то сделать с переменной, имеющей тип 'undefined' (например, вызвать
   // её как функцию или обратиться к её свойству) будет сгенерирована ошибка:
 
-  /*>>*/ let someUndefinedValue
-  /*>>*/ someUndefinedValue.foo // приводит к ошибке "Cannot read property 'foo' of undefined"
-  /*>>*/ someUndefinedValue() // приводит к ошибке "someUndefinedValue is not a function"
+  //*>>*/ let someUndefinedValue
+  //*>>*/ someUndefinedValue.foo // приводит к ошибке "Cannot read property 'foo' of undefined"
+  //*>>*/ someUndefinedValue() // приводит к ошибке "someUndefinedValue is not a function"
 
   // При необходимости проверить что-либо на undefined, можно напрямую сравнить с undefined или использовать
   // оператор typeof; второе предпочтительнее (отголосок времён, когда можно было переопределить undefined = 'что-нибудь')
@@ -182,7 +182,7 @@ export function typescriptIntro() {
 
   // Числа можно также объявлять в экспоненциальной нотации: <A>e<B> = A * (10 ** B)
 
-  /*>>*/ assert.equal(2e6, undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(2e6, 2000000, 'Замените undefined на значение :)')
 
   // Необходимо также  внимательно следить за возможными ошибками округления.
   // наиболее типичная ошибка округления: 0.1 + 0.2 = 0.30000000000000004
@@ -198,7 +198,7 @@ export function typescriptIntro() {
 
   assert.equal(35 / 0, Number.POSITIVE_INFINITY)
   assert.equal(-20 / 0, Number.NEGATIVE_INFINITY)
-  assert.notEqual(0 / 0, NaN)
+  assert.equal(0 / 0, NaN)//What???!!!
   assert(Number.isNaN(0 / 0))
 
   //==================================4. bigint=======================================
@@ -233,10 +233,10 @@ export function typescriptIntro() {
   // Оператор "===" не приводит типы и всегда возвращает false, если типы операндов
   // не совпадают:
 
-  /*>>*/ assert.equal(zero === false, undefined, 'Замените undefined на значение :)')
-  /*>>*/ assert.equal(zero === '0', undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(zero === false, false, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(zero === '0', false, 'Замените undefined на значение :)')
 
-  // Из-за этого "===" имеет более предсказуемое поведение, поэтому его рекоммендуется
+  // Из-за этого "===" имеет более предсказуемое поведение, поэтому его рекомендуется
   // использовать во всех ситуациях без исключения.
 
   // Аналогично работают операторы "!=" и "!==", рекомендуется для сравнения использовать только !==.
@@ -259,11 +259,11 @@ It includes value "${thisIsAny}" as part of it`
 
   const theAnswerToEverything = 42
 
-  /*>>*/ const myString = ``
+  /*>>*/ const myString = `The answer to everything is ${theAnswerToEverything}!`
   assert.equal(myString, 'The answer to everything is 42!', 'Замените `` в предыдущей строчке на значение :)')
 
   // Строки являются ссылочным типом, но они неизменяемы - любая операция над строкой
-  // создаёт новую строку. При этом ператор === сравнивает строки по содержимому.
+  // создаёт новую строку. При этом оператор === сравнивает строки по содержимому.
 
   // Некоторые полезные методы строк:
   assert.equal('Abc'.toLowerCase(), 'abc') // в нижний регистр
@@ -463,7 +463,7 @@ It includes value "${thisIsAny}" as part of it`
 
   // У каждого массива есть числовое свойство 'length', содержащее его длину.
   assert.equal(array1.length, 0)
-  /*>>*/ assert.equal(array2.length, undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(array2.length, 3, 'Замените undefined на значение :)')
 
   // Обратите внимание - массивы в JS/TS можно не выделять заранее,
   // и в них по определению отсутствует ошибка "выхода за границы" массива.
@@ -697,7 +697,7 @@ It includes value "${thisIsAny}" as part of it`
   assert.equal(typeof fooInstance, 'object')
 
   // Как уже упоминалось, для проверки принадлежности классу можно использовать оператор instanceof:
-  /*>>*/ assert(fooInstance instanceof Map, 'Замените Map на корректный тип :)')
+  /*>>*/ assert(fooInstance instanceof Foo, 'Замените Map на корректный тип :)')
 
   // Наследование реализуется при помощи ключевого слова extends.
   // Если класс-наследник не включает в себя конструктор, вместо него автоматически используется
@@ -733,9 +733,9 @@ It includes value "${thisIsAny}" as part of it`
   // свойство size - количество элементов множества
   assert.equal(set.size, 4)
   set.add(2)
-  /*>>*/ assert.equal(set.size, undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(set.size, 4, 'Замените undefined на значение :)')
   set.add(5)
-  /*>>*/ assert.equal(set.size, undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(set.size, 5, 'Замените undefined на значение :)')
 
   // Map - множество пар "ключ-значение" (хэш-таблица)
   const map = new Map<any, any>([
@@ -774,7 +774,7 @@ It includes value "${thisIsAny}" as part of it`
   for (const symbol of 'string') {
     reversedSymbols.unshift(symbol)
   }
-  /*>>*/ assert.equal(reversedSymbols.join(''), undefined, 'Замените undefined на значение :)')
+  /*>>*/ assert.equal(reversedSymbols.join(''), "gnirts", 'Замените undefined на значение :)')
 
   const map2 = new Map([
     [1, 'one'],
@@ -952,12 +952,12 @@ It includes value "${thisIsAny}" as part of it`
   assert.equal(processUserResult({type: 'notFound'}), 'User not found')
   /*>>*/ assert.equal(
     processUserResult({type: 'error', errorDescription: 'Ошибка!'}),
-    undefined,
+    'Ошибка!',
     'Замените undefined на значение :)',
   )
   /*>>*/ assert.equal(
     processUserResult({type: 'found', user: {id: 3, name: 'Test User'}}),
-    undefined,
+    `Found user id 3 Test User`,
     'Замените undefined на значение :)',
   )
 
@@ -965,5 +965,5 @@ It includes value "${thisIsAny}" as part of it`
 }
 
 export function helloWorld() {
-  // TODO: Код к заданию 2 здесь
+  console.log(`Hello, world!`)
 }
