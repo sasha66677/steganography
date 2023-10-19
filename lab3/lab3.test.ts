@@ -1,6 +1,6 @@
 import Jimp from 'jimp'
 import {TextEncoder, TextDecoder} from 'util'
-import {kjbEmbed, kjbExtract} from './lab3.t'
+import {kjbEmbed, kjbExtract} from './lab3'
 import hammingDistance from 'hamming-distance'
 
 function roundToPrecision(input: number, places: number) {
